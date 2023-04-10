@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.betterview {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+.btn {
+  padding: 12px;
+  border-radius: 4px;
+  background-color: bisque;
+  color: #000000;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.reset {
+  background-color: rgb(221, 153, 25);
+}
+.increment {
+  background-color: rgb(151, 195, 86);
+}
+.decrement {
+  background-color: rgb(208, 84, 84);
+}
+li {
+  list-style: none;
+}
+table{
+  width: 50%;
+}
+input {
+  padding: 10px;
+}
+table td {
+  width: 10%;
+  text-align: center;
+  padding: 5px;
+}
+table td {
+  background-color: aquamarine;
+}
