@@ -6,8 +6,12 @@ import { addTodo, deleteTodo } from '../store/actions';
 
 const Todo = (props) => {
     const [newTask, setNewTask] = useState('');
+    const todoReset = ()=>{
+        setNewTask("")
+    }
     function addTask(){
         props.dispatch(addTodo(newTask))
+        props.dispatch(todoReset)
         
     }
     function deleteTask(i){
@@ -15,7 +19,7 @@ const Todo = (props) => {
     }
   return (
     <div className='betterview'>
-        <input type="text" onChange={(e)=>{setNewTask(e.target.value)}} />
+        <input type="text" onChange={(e)=>{setNewTask(e.target.value)}} value={newTask} />
         <button onClick={addTask} className='btn'>Add Task</button>
         {
             props.todos.todos.map((todo, i)=>{

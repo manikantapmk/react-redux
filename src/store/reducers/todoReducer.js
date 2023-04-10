@@ -6,7 +6,11 @@ const initialState = {
 
 function todoReducer(state=initialState, action){
     if(action.type === ADD_TASK){
-        return {
+        if(action.payload ==  "") {
+            alert(" Field Not Empty")
+            return {...state}
+        }
+        else return{
             ...state,
             todos: [...state.todos, action.payload],
             

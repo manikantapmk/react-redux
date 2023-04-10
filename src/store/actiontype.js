@@ -1,3 +1,4 @@
 export const ADD_TASK = 'ADD_TASK'
 export const DELETE_TASK = 'DELETE_TASK'
 export const UPDATED_COUNTRIES = 'UPDATED_COUNTRIES'
+export const DELETE_COUNTRY = 'DELETE_COUNTRY'

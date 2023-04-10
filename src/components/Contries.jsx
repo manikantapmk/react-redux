@@ -1,17 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateContries } from '../store/actions';
+import { getContries } from '../store/actions';
+import { DELETE_COUNTRY } from '../store/actiontype';
 
 const Contries = (props) => {
     console.log(props.contries);
     React.useEffect(()=>{
-        fetch("https://restcountries.com/v2/all")
-        .then(res=> res.json())
-        .then(data=>props.dispatch(updateContries(data)))
+        props.dispatch(getContries())
     },[])
+
+    function deleteCountry(id){
+      props.dispatch({type: DELETE_COUNTRY, payload: id})
+    } 
   return (
     <div>
-       
+       <ul>
+        {
+          props.contries.countries.map((country)=>{
+            return( <table>
+              <tr>
+                <td>
+                {
+                country.name
+              }
+                </td>
+                <td>
+                <button onClick={()=>deleteCountry(country.numericCode)}>{`Delete ${country.name}`}</button>
+                </td>
+              </tr>
+            </table>
+            )
+            
+          })
+        }
+       </ul>
     </div>
   )
 }

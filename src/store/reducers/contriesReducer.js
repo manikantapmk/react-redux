@@ -11,6 +11,14 @@ function contriesReducer(state= initialState, action){
             countries: [...action.payload]
         }
     }
+    if(action.type === 'DELETE_COUNTRY') {
+        const newCountries = state.countries.filter((country)=> country.numericCode !== action.payload)
+        return {
+            ...state,
+            countries: newCountries
+            
+        }
+    }
     return state
 }
 
